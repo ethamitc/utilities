@@ -1,4 +1,5 @@
-<div style="text-align:center;"><h1>Common NodeJS packages for Sapphire Repositories</h1></div>
+<div style="text-align:center;"><h1>@sapphire/eslint-config</h1>
+<h3>Shareable ESLint configuration for all Sapphire Projects repositories</h3></div>
 
 [![GitHub](https://img.shields.io/github/license/sapphire-project/utilities)](https://github.com/sapphire-project/utilities/blob/main/LICENSE.md)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/sapphire-project/utilities.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sapphire-project/utilities/alerts/)
@@ -11,11 +12,13 @@
 ## Installation
 
 **First install the Peer Dependencies**
+
 ```sh
 yarn add -D typescript
 ```
 
 **Then install `@sapphire/eslint-config`**
+
 ```sh
 yarn add -D @sapphire/eslint-config
 ```
@@ -26,10 +29,9 @@ yarn add -D @sapphire/eslint-config
 
 Add the ESLint config to your `package.json`:
 
-```jsonc
+```json
 {
 	"name": "my-project",
-	// ...
 	"eslintConfig": {
 		"extends": "@sapphire"
 	}
@@ -86,6 +88,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
