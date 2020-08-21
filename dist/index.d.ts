@@ -411,7 +411,7 @@ export declare const config: {
         '@typescript-eslint/array-type': string;
         '@typescript-eslint/await-thenable': string;
         '@typescript-eslint/explicit-member-accessibility': string;
-        '@typescript-eslint/indent': string[];
+        '@typescript-eslint/indent': string;
         '@typescript-eslint/member-ordering': (string | {
             default: string[];
         })[];
