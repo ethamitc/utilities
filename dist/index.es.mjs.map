@@ -1,0 +1,1 @@
+{"version":3,"file":"index.es.mjs","sources":["../src/index.ts"],"sourcesContent":["export const main = () => 'this builds and pushes';\n\nexport default main;\n"],"names":["main"],"mappings":"MAAaA,EAAO,IAAM"}
