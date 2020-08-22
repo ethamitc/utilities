@@ -1,6 +1,6 @@
 export interface Thenable {
-    then: (...args: unknown[]) => unknown;
-    catch: (...args: unknown[]) => unknown;
+    then: Function;
+    catch: Function;
 }
 /**
  * Verify if an object is a promise.
