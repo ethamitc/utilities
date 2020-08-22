@@ -4,5 +4,5 @@
  * @param language The codeblock language
  * @default 'md'
  */
-export declare function codeBlock(expression: string, language?: string): string;
+export declare function codeBlock<T extends unknown>(expression: T, language?: string): string;
 //# sourceMappingURL=codeBlock.d.ts.map
