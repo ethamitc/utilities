@@ -336,7 +336,7 @@ export declare const config: {
         'sort-imports': string;
         'symbol-description': string;
         'template-curly-spacing': string[];
-        'yield-star-spacing': string[];
+        'yield-star-spacing': string;
         '@typescript-eslint/no-invalid-void-type': string;
         '@typescript-eslint/dot-notation': (string | {
             allowKeywords: boolean;

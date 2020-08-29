@@ -356,7 +356,7 @@ exports.config = {
         'sort-imports': 'off',
         'symbol-description': 'warn',
         'template-curly-spacing': ['error', 'never'],
-        'yield-star-spacing': ['error', 'before'],
+        'yield-star-spacing': 'off',
         '@typescript-eslint/no-invalid-void-type': 'error',
         '@typescript-eslint/dot-notation': [
             'error',
