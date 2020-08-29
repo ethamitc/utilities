@@ -184,7 +184,7 @@ export declare const config: {
         'func-name-matching': string[];
         'func-names': string[];
         'func-style': string;
-        'function-paren-newline': string[];
+        'function-paren-newline': string;
         'id-blacklist': string;
         'id-length': string;
         'id-match': string;
@@ -247,12 +247,7 @@ export declare const config: {
         'one-var': string[];
         'one-var-declaration-per-line': string;
         'operator-assignment': string[];
-        'operator-linebreak': (string | {
-            overrides: {
-                '+': string;
-                '-': string;
-            };
-        })[];
+        'operator-linebreak': string;
         'padded-blocks': string;
         'padding-line-between-statements': string;
         'quote-props': (string | {
@@ -296,9 +291,7 @@ export declare const config: {
         'unicode-bom': string[];
         'wrap-regex': string;
         'arrow-body-style': string[];
-        'arrow-parens': (string | {
-            requireForBlockBody: boolean;
-        })[];
+        'arrow-parens': string;
         'arrow-spacing': (string | {
             before: boolean;
             after: boolean;
