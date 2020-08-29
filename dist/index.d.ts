@@ -253,9 +253,7 @@ export declare const config: {
                 '-': string;
             };
         })[];
-        'padded-blocks': (string | {
-            classes: string;
-        })[];
+        'padded-blocks': string;
         'padding-line-between-statements': string;
         'quote-props': (string | {
             keywords: boolean;

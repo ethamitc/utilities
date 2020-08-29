@@ -257,7 +257,7 @@ exports.config = {
                 }
             }
         ],
-        'padded-blocks': ['error', { classes: 'always' }],
+        'padded-blocks': 'off',
         'padding-line-between-statements': 'off',
         'quote-props': [
             'error',
