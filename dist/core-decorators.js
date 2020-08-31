@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApplyOptions = void 0;
+exports.enumerable = exports.ApplyOptions = void 0;
 const utils_1 = require("./utils");
 /**
  * Decorator function that applies given options to any Klasa piece
@@ -24,4 +24,26 @@ function ApplyOptions(optionsOrFn) {
     }));
 }
 exports.ApplyOptions = ApplyOptions;
+/**
+ * @enumerable decorator that sets the enumerable property of a class field to false.
+ * @param value Whether the property should be enumerable or not
+ */
+function enumerable(value) {
+    return (target, key) => {
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        Reflect.defineProperty(target, key, {
+            enumerable: value,
+            set(val) {
+                // eslint-disable-next-line @typescript-eslint/ban-types
+                Reflect.defineProperty(this, key, {
+                    configurable: true,
+                    enumerable: value,
+                    value: val,
+                    writable: true
+                });
+            }
+        });
+    };
+}
+exports.enumerable = enumerable;
 //# sourceMappingURL=core-decorators.js.map
