@@ -3,7 +3,7 @@
  *
  * ```ts
  * // Enumerable function
- *	function enumerable(value: boolean) {
+ *	function enumerableMethod(value: boolean) {
  *		return createMethodDecorator((_target, _propertyKey, descriptor) => {
  *			descriptor.enumerable = value;
  *		});
@@ -23,7 +23,7 @@ export declare function createClassDecorator<TFunction extends (...args: any[]) 
 /**
  * Creates a new proxy to efficiently add properties to class without creating subclasses
  * @param target The constructor of the class to modify
- * @param handler The handler function to modify the constructor behaviour for the target
+ * @param handler The handler function to modify the constructor behavior for the target
  * @hidden
  */
 export declare function createProxy<T extends object>(target: T, handler: Omit<ProxyHandler<T>, 'get'>): T;

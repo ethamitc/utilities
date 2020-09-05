@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.enumerable = exports.ApplyOptions = void 0;
+exports.enumerableMethod = exports.enumerable = exports.ApplyOptions = void 0;
 const utils_1 = require("./utils");
 /**
  * Decorator function that applies given options to any Klasa piece
@@ -25,7 +25,7 @@ function ApplyOptions(optionsOrFn) {
 }
 exports.ApplyOptions = ApplyOptions;
 /**
- * @enumerable decorator that sets the enumerable property of a class field to false.
+ * Decorator that sets the enumerable property of a class field to the desired value.
  * @param value Whether the property should be enumerable or not
  */
 function enumerable(value) {
@@ -46,4 +46,14 @@ function enumerable(value) {
     };
 }
 exports.enumerable = enumerable;
+/**
+ * Decorator that sets the enumerable property of a class method to the desired value.
+ * @param value Whether the metthod should be enumerable or not
+ */
+function enumerableMethod(value) {
+    return utils_1.createMethodDecorator((_target, _propertyKey, descriptor) => {
+        descriptor.enumerable = value;
+    });
+}
+exports.enumerableMethod = enumerableMethod;
 //# sourceMappingURL=core-decorators.js.map

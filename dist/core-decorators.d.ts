@@ -15,8 +15,13 @@ import type { PieceOptions } from '@sapphire/pieces';
  */
 export declare function ApplyOptions<T extends PieceOptions>(optionsOrFn: T | ((client: SapphireClient) => T)): ClassDecorator;
 /**
- * @enumerable decorator that sets the enumerable property of a class field to false.
+ * Decorator that sets the enumerable property of a class field to the desired value.
  * @param value Whether the property should be enumerable or not
  */
 export declare function enumerable(value: boolean): (target: unknown, key: string) => void;
+/**
+ * Decorator that sets the enumerable property of a class method to the desired value.
+ * @param value Whether the metthod should be enumerable or not
+ */
+export declare function enumerableMethod(value: boolean): MethodDecorator;
 //# sourceMappingURL=core-decorators.d.ts.map

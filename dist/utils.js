@@ -6,7 +6,7 @@ exports.createProxy = exports.createClassDecorator = exports.createMethodDecorat
  *
  * ```ts
  * // Enumerable function
- *	function enumerable(value: boolean) {
+ *	function enumerableMethod(value: boolean) {
  *		return createMethodDecorator((_target, _propertyKey, descriptor) => {
  *			descriptor.enumerable = value;
  *		});
@@ -32,7 +32,7 @@ exports.createClassDecorator = createClassDecorator;
 /**
  * Creates a new proxy to efficiently add properties to class without creating subclasses
  * @param target The constructor of the class to modify
- * @param handler The handler function to modify the constructor behaviour for the target
+ * @param handler The handler function to modify the constructor behavior for the target
  * @hidden
  */
 // eslint-disable-next-line @typescript-eslint/ban-types
