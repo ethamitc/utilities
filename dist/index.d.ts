@@ -190,7 +190,6 @@ export declare const config: {
         'func-style': string;
         'function-paren-newline': string;
         'generator-star-spacing': string[];
-        'getter-return': string;
         'global-require': string;
         'guard-for-in': string;
         'handle-callback-err': string;
@@ -275,6 +274,7 @@ export declare const config: {
         'no-implicit-coercion': string;
         'no-implicit-globals': string;
         'no-implied-eval': string;
+        'no-import-assign': string;
         'no-inline-comments': string;
         'no-inner-declarations': string;
         'no-invalid-regexp': string;
@@ -332,6 +332,7 @@ export declare const config: {
         'no-self-assign': string;
         'no-self-compare': string;
         'no-sequences': string;
+        'no-setter-return': string;
         'no-shadow': string;
         'no-shadow-restricted-names': string;
         'no-sparse-arrays': string;
