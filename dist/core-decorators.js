@@ -12,7 +12,6 @@ const utils_1 = require("./utils");
  *	})
  *	export default class extends Command {}
  * ```
- * @since 1.0.0
  * @param options The options to pass to the piece constructor
  */
 function ApplyOptions(optionsOrFn) {

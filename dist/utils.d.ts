@@ -9,13 +9,11 @@
  *		});
  *	}
  * ```
- * @since 1.0.0
  * @param fn The method to decorate
  */
 export declare function createMethodDecorator(fn: MethodDecorator): MethodDecorator;
 /**
  * Utility to make a class decorator with lighter syntax and inferred types.
- * @since 1.0.0
  * @param fn The class to decorate
  * @see {@link ApplyOptions}
  */
