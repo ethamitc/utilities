@@ -4,7 +4,7 @@ exports.enumerableMethod = exports.enumerable = exports.ApplyOptions = void 0;
 const utils_1 = require("./utils");
 /**
  * Decorator function that applies given options to any Klasa piece
- *
+ * @example
  * ```ts
  *	ApplyOptions<CommandOptions>({
  *		name: 'test',
