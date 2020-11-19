@@ -1,15 +1,4 @@
-/**
- * The supported time types
- */
-export declare const enum TimeTypes {
-    Second = "second",
-    Minute = "minute",
-    Hour = "hour",
-    Day = "day",
-    Week = "week",
-    Month = "month",
-    Year = "year"
-}
+import { TimeTypes } from './constants';
 /**
  * Display the duration
  * @param duration The duration in milliseconds to parse and display

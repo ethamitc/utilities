@@ -1,4 +1,16 @@
-import { DurationFormatAssetsTime } from './DurationFormatter';
+import type { DurationFormatAssetsTime } from './DurationFormatter';
+/**
+ * The supported time types
+ */
+export declare const enum TimeTypes {
+    Second = "second",
+    Minute = "minute",
+    Hour = "hour",
+    Day = "day",
+    Week = "week",
+    Month = "month",
+    Year = "year"
+}
 export declare const enum Time {
     Millisecond = 1,
     Second = 1000,
