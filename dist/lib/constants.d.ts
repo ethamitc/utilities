@@ -1,3 +1,4 @@
+import { DurationFormatAssetsTime } from './DurationFormatter';
 export declare const enum Time {
     Millisecond = 1,
     Second = 1000,
@@ -43,4 +44,5 @@ export declare const cronTokens: {
     readonly sat: 6;
 };
 export declare const tokensRegex: RegExp;
+export declare const DEFAULT_UNITS: DurationFormatAssetsTime;
 //# sourceMappingURL=constants.d.ts.map

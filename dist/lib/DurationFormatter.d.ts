@@ -17,7 +17,7 @@ export declare const enum TimeTypes {
  */
 export declare class DurationFormatter {
     units: DurationFormatAssetsTime;
-    constructor(units: DurationFormatAssetsTime);
+    constructor(units?: DurationFormatAssetsTime);
     format(duration: number, precision?: number): string;
 }
 interface DurationFormatAssetsUnit extends Record<number, string> {
