@@ -26,6 +26,13 @@ exports.prettierConfig = {
             options: {
                 parser: 'json'
             }
+        },
+        {
+            files: '*.yml',
+            options: {
+                tabWidth: 2,
+                useTabs: false
+            }
         }
     ]
 };
