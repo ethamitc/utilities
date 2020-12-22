@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.config = void 0;
+exports.eslintConfig = void 0;
 /**
  * Default ESLint configuration for Sapphire Projects
  * @example
@@ -10,7 +10,7 @@ exports.config = void 0;
  * }
  * ```
  */
-exports.config = {
+exports.eslintConfig = {
     root: true,
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -382,6 +382,6 @@ exports.config = {
         yoda: 'error'
     }
 };
-module.exports = exports.config;
-exports.default = exports.config;
+module.exports = exports.eslintConfig;
+exports.default = exports.eslintConfig;
 //# sourceMappingURL=index.js.map

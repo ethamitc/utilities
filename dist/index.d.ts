@@ -7,7 +7,7 @@
  * }
  * ```
  */
-export declare const config: {
+export declare const eslintConfig: {
     root: boolean;
     parser: string;
     parserOptions: {
@@ -327,5 +327,5 @@ export declare const config: {
         yoda: string;
     };
 };
-export default config;
+export default eslintConfig;
 //# sourceMappingURL=index.d.ts.map
