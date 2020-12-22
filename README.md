@@ -2,77 +2,48 @@
 
 ![Sapphire Logo](https://cdn.skyra.pw/gh-assets/sapphire.png)
 
-# @sapphire/stopwatch
+# @sapphire/discord-utilities
 
-**Accurately measure passing time**
+**Discord specific utilities for your JavaScript/TypeScript bots.**
 
 [![GitHub](https://img.shields.io/github/license/sapphire-project/utilities)](https://github.com/sapphire-project/utilities/blob/main/LICENSE.md)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/sapphire-project/utilities.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sapphire-project/utilities/alerts/)
-[![Language grade: JavaScript/TypeScript](https://img.shields.io/lgtm/grade/javascript/g/sapphire-project/utilities.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sapphire-project/utilities/context:javascript)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/sapphire-project/utilities.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sapphire-project/utilities/context:javascript)
 [![Coverage Status](https://coveralls.io/repos/github/sapphire-project/utilities/badge.svg?branch=main)](https://coveralls.io/github/sapphire-project/utilities?branch=main)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/@sapphire/stopwatch?logo=webpack&style=flat-square)](https://bundlephobia.com/result?p=@sapphire/stopwatch)
-[![npm](https://img.shields.io/npm/v/@sapphire/stopwatch?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/@sapphire/stopwatch)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/@sapphire/discord-utilities?logo=webpack&style=flat-square)](https://bundlephobia.com/result?p=@sapphire/discord-utilities)
+[![npm](https://img.shields.io/npm/v/@sapphire/discord-utilities?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/@sapphire/discord-utilities)
 [![Depfu](https://badges.depfu.com/badges/ec42ff3d6bae55eee1de4749960852b3/count.svg)](https://depfu.com/github/sapphire-project/utilities?project_id=15195)
 
 </div>
 
-**Table of Contents**
-
--   [Description](#description)
--   [Features](#features)
--   [Installation](#installation)
--   [Usage](#usage)
-    -   [Basic Usage](#basic-usage)
--   [API Documentation](#api-documentation)
--   [Buy us some doughnuts](#buy-us-some-doughnuts)
--   [Contributors ✨](#contributors-%E2%9C%A8)
-
 ## Description
 
-Provides a set of methods and properties that you can use to accurately measure elapsed time.
+When developing Discord bots or frameworks for Discord bots we often run into certain constants such as regex's, channel type resolutions and other common functions that would be really nice to get from 1 centralized place. That's where @sapphire/discord-utilities come in. This package provides common Discord specific utilities for your Discord bots.
 
 ## Features
 
 -   Written in TypeScript
+-   Bundled with Rollup so it can be used in NodeJS and browsers
+-   Offers CommonJS, ESM and UMD bundles
 -   Fully tested
 
 ## Installation
 
 ```sh
-yarn add @sapphire/stopwatch
-# npm install @sapphire/stopwatch
-```
-
-## Usage
-
-**Note:** While this section uses `require`, the imports match 1:1 with ESM imports. For example `const { Stopwatch } = require('@sapphire/stopwatch')` equals `import { Stopwatch } from '@sapphire/stopwatch'`.
-
-### Basic Usage
-
-```ts
-// Import the Stopwatch class
-const { Stopwatch } = require('@sapphire/stopwatch');
-
-// Create a new Stopwatch (which also starts it immediately)
-const stopwatch = new Stopwatch();
-
-// run other task here
-
-console.log(stopwatch.stop().toString());
-// 200ms
+yarn add @sapphire/discord-utilities
 ```
 
 ---
 
 ## API Documentation
 
-For the full API documentation please refer to the TypeDoc generated [documentation](https://sapphire-project.github.io/utilities/modules/_sapphire_stopwatch.html).
+For the full API documentation please refer to the TypeDoc generated [documentation](https://sapphire-project.github.io/utilities/modules/_sapphire_discord_utilities.html).
 
 ## Buy us some doughnuts
 
 Sapphire Project is and always will be open source, even if we don't get donations. That being said, we know there are amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
 
-We accept donations through Open Collective, Ko-fi, PayPal, Patreon and GitHub Sponsorships. You can use the buttons below to donate through your method of choice.
+We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub Sponsorships. You can use the buttons below to donate through your method of choice.
 
 |   Donate With   |                                             Address                                              |
 | :-------------: | :----------------------------------------------------------------------------------------------: |
