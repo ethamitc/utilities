@@ -1,4 +1,4 @@
-import type { CategoryChannel, Channel, DMChannel, GuildChannel, NewsChannel, PartialGroupDMChannel, StoreChannel, VoiceChannel } from 'discord.js';
+import type { CategoryChannel, Channel, DMChannel, GuildChannel, NewsChannel, PartialGroupDMChannel, StoreChannel, TextChannel, VoiceChannel } from 'discord.js';
 /**
  * Checks whether a given channel is a {@link https://discord.js.org/#/docs/main/stable/class/CategoryChannel CategoryChannel}
  * @param channel The channel to check
@@ -33,7 +33,7 @@ export declare function isStoreChannel(channel: Channel): channel is StoreChanne
  * Checks whether a given channel is a {@link https://discord.js.org/#/docs/main/stable/class/TextChannel TextChannel}
  * @param channel The channel to check
  */
-export declare function isTextChannel(channel: Channel): channel is StoreChannel;
+export declare function isTextChannel(channel: Channel): channel is TextChannel;
 /**
  * Checks whether a given channel is a {@link https://discord.js.org/#/docs/main/stable/class/VoiceChannel VoiceChannel}
  * @param channel The channel to check
