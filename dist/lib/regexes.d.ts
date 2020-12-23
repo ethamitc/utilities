@@ -1,6 +1,6 @@
 /**
  * Regex that can capture the ID in Discord Channel mentions
- * @raw `/^<#(?<id>\d{17,19})>?$/`
+ * @raw `/^<#(?<id>\d{17,19})>$/`
  * @remark Capture group 1 is the ID of the channel. It is named `id`.
  */
 export declare const ChannelMentionRegex: RegExp;
@@ -92,7 +92,7 @@ export declare const SnowflakeRegex: RegExp;
 export declare const TwemojiRegex: string;
 /**
  * Regex that can capture the ID of a user in Discord user mentions
- * @raw `/^<@!?(?<id>\d{17,19})>?$/`
+ * @raw `/^<@!?(?<id>\d{17,19})>$/`
  * @remark Capture group 1 is the ID of the user. It is named `id`.
  */
 export declare const UserOrMemberMentionRegex: RegExp;
