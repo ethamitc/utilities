@@ -33,7 +33,7 @@ export declare class Timestamp {
      * @since 1.0.0
      * @param time The time to display in utc
      */
-    displayUTC(time: TimeResolvable): string;
+    displayUTC(time?: TimeResolvable): string;
     /**
      * Edits the current pattern.
      * @since 1.0.0
