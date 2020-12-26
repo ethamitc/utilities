@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createProxy = exports.createClassDecorator = exports.createMethodDecorator = void 0;
+exports.createProxy = exports.createFunctionPrecondition = exports.createClassDecorator = exports.createMethodDecorator = void 0;
 /**
  * Utility to make a method decorator with lighter syntax and inferred types.
  *
@@ -27,6 +27,46 @@ function createClassDecorator(fn) {
     return fn;
 }
 exports.createClassDecorator = createClassDecorator;
+/**
+ * Utility to make function preconditions.
+ *
+ * ```ts
+ * // No fallback (returns undefined)
+ * function requireGuild(value: number) {
+ *   return createFunctionPrecondition((message: Message) =>
+ *     message.guild !== null
+ *   );
+ * }
+ *
+ * // With fallback
+ * function requireGuild(
+ *   value: number,
+ *   fallback: () => unknown = () => undefined
+ * ) {
+ *   return createFunctionPrecondition(
+ *     (message: Message) => message.guild !== null,
+ *     fallback
+ *   );
+ * }
+ * ```
+ * @since 1.0.0
+ * @param precondition The function that defines whether or not the function should be run, returning the returned value from fallback
+ * @param fallback The fallback value that defines what the method should return in case the precondition fails
+ */
+function createFunctionPrecondition(precondition, fallback = () => undefined) {
+    return createMethodDecorator((_target, _propertyKey, descriptor) => {
+        const method = descriptor.value;
+        if (!method)
+            throw new Error('Function preconditions require a [[value]].');
+        if (typeof method !== 'function')
+            throw new Error('Function preconditions can only be applied to functions.');
+        descriptor.value = async function descriptorValue(...args) {
+            const canRun = await precondition(...args);
+            return canRun ? method.call(this, ...args) : fallback.call(this, ...args);
+        };
+    });
+}
+exports.createFunctionPrecondition = createFunctionPrecondition;
 /**
  * Creates a new proxy to efficiently add properties to class without creating subclasses
  * @param target The constructor of the class to modify

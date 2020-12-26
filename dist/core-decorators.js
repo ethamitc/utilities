@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.enumerableMethod = exports.enumerable = exports.ApplyOptions = void 0;
 const utils_1 = require("./utils");
 /**
- * Decorator function that applies given options to any Klasa piece
+ * Decorator function that applies given options to any Sapphire piece
  * @example
  * ```ts
  *	ApplyOptions<CommandOptions>({

@@ -1,7 +1,7 @@
 import type { SapphireClient } from '@sapphire/framework';
 import type { PieceOptions } from '@sapphire/pieces';
 /**
- * Decorator function that applies given options to any Klasa piece
+ * Decorator function that applies given options to any Sapphire piece
  * @example
  * ```ts
  *	ApplyOptions<CommandOptions>({
