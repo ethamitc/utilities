@@ -1,0 +1,2 @@
+class AsyncQueue{constructor(){Object.defineProperty(this,"promises",{enumerable:!0,configurable:!0,writable:!0,value:[]})}get remaining(){return this.promises.length}wait(){const e=this.promises.length?this.promises[this.promises.length-1].promise:Promise.resolve();let s;const i=new Promise((e=>{s=e}));return this.promises.push({resolve:s,promise:i}),e}shift(){const e=this.promises.shift();void 0!==e&&e.resolve()}}export{AsyncQueue};
+//# sourceMappingURL=index.mjs.map
