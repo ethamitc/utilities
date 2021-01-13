@@ -1,1 +1,1 @@
-{"version":3,"file":"LazyPaginatedMessage.d.ts","sourceRoot":"","sources":["../../src/lib/LazyPaginatedMessage.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,oBAAoB,CAAC;AAEtD,qBAAa,oBAAqB,SAAQ,gBAAgB;IAC5C,mBAAmB;IAInB,WAAW,CAAC,KAAK,GAAE,MAAmB;CAMnD"}
+{"version":3,"file":"LazyPaginatedMessage.d.ts","sourceRoot":"","sources":["../../src/lib/LazyPaginatedMessage.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,oBAAoB,CAAC;AAEtD;;GAEG;AACH,qBAAa,oBAAqB,SAAQ,gBAAgB;IACzD;;OAEG;IACU,mBAAmB;IAIhC;;;OAGG;IACU,WAAW,CAAC,KAAK,GAAE,MAAmB;CAMnD"}
