@@ -384,4 +384,3 @@ exports.eslintConfig = {
 };
 module.exports = exports.eslintConfig;
 exports.default = exports.eslintConfig;
-//# sourceMappingURL=index.js.map
