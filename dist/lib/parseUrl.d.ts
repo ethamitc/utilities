@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { URL } from 'url';
+import type { URL } from 'url';
 /**
  * Parses an URL, returns null if invalid.
  * @param url The url to parse
