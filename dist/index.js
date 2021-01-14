@@ -38,4 +38,3 @@ exports.prettierConfig = {
 };
 module.exports = exports.prettierConfig;
 exports.default = exports.prettierConfig;
-//# sourceMappingURL=index.js.map
