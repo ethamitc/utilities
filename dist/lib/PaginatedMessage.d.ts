@@ -1,4 +1,4 @@
-import type { APIMessage, User, TextChannel, NewsChannel, Message, ReactionCollector } from 'discord.js';
+import type { APIMessage, Message, MessageReaction, NewsChannel, ReactionCollector, TextChannel, User } from 'discord.js';
 /**
  * This is a [[PaginatedMessage]], a utility to paginate messages (usually embeds).
  * You must either use this class directly or extend it.
@@ -44,6 +44,14 @@ export declare class PaginatedMessage {
      * The pages to be converted to [[PaginatedMessage.messages]]
      */
     pages: MessagePage[];
+    /**
+     * The response message used to edit on page changes.
+     */
+    response: Message | null;
+    /**
+     * The collector used for handling reactions.
+     */
+    collector: ReactionCollector | null;
     /**
      * The pages which were converted from [[PaginatedMessage.pages]]
      */
@@ -125,10 +133,17 @@ export declare class PaginatedMessage {
      * This clones the current handler into a new instance.
      */
     clone(): PaginatedMessage;
+    protected handleCollect(author: User, channel: TextChannel | NewsChannel, reaction: MessageReaction, user: User): Promise<void>;
+    protected handleEnd(reason: string): Promise<void>;
     /**
      * The default actions of this handler.
      */
     static defaultActions: IPaginatedMessageAction[];
+    /**
+     * The reasons sent by {@link https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=e-end ReactionCollector#end}
+     * event when the message (or its owner) has been deleted.
+     */
+    static deletionStopReasons: string[];
 }
 /**
  * @example
