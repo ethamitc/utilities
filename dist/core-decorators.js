@@ -18,7 +18,7 @@ function ApplyOptions(optionsOrFn) {
     return utils_1.createClassDecorator((target) => utils_1.createProxy(target, {
         construct: (ctor, [context, baseOptions = {}]) => new ctor(context, {
             ...baseOptions,
-            ...(typeof optionsOrFn === 'function' ? optionsOrFn(context.client) : optionsOrFn)
+            ...(typeof optionsOrFn === 'function' ? optionsOrFn(context) : optionsOrFn)
         })
     }));
 }

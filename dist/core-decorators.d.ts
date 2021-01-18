@@ -1,5 +1,4 @@
-import type { SapphireClient } from '@sapphire/framework';
-import type { PieceOptions } from '@sapphire/pieces';
+import type { PieceContext, PieceOptions } from '@sapphire/pieces';
 /**
  * Decorator function that applies given options to any Sapphire piece
  * @example
@@ -12,7 +11,7 @@ import type { PieceOptions } from '@sapphire/pieces';
  * ```
  * @param options The options to pass to the piece constructor
  */
-export declare function ApplyOptions<T extends PieceOptions>(optionsOrFn: T | ((client: SapphireClient) => T)): ClassDecorator;
+export declare function ApplyOptions<T extends PieceOptions>(optionsOrFn: T | ((context: PieceContext) => T)): ClassDecorator;
 /**
  * Decorator that sets the enumerable property of a class field to the desired value.
  * @param value Whether the property should be enumerable or not
