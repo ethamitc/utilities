@@ -86,37 +86,6 @@ exports.eslintConfig = {
                 ]
             }
         ],
-        '@typescript-eslint/naming-convention': [
-            'error',
-            {
-                filter: {
-                    match: false,
-                    regex: '^(?:VariableDeclarator|AssignmentExpression)$'
-                },
-                format: ['camelCase'],
-                leadingUnderscore: 'forbid',
-                selector: 'default',
-                trailingUnderscore: 'forbid'
-            },
-            {
-                format: ['camelCase'],
-                leadingUnderscore: 'allow',
-                selector: 'parameter'
-            },
-            {
-                format: ['camelCase'],
-                modifiers: ['readonly'],
-                selector: 'property'
-            },
-            {
-                format: ['PascalCase'],
-                selector: 'enumMember'
-            },
-            {
-                format: ['PascalCase'],
-                selector: 'typeLike'
-            }
-        ],
         '@typescript-eslint/no-base-to-string': 'error',
         '@typescript-eslint/no-dupe-class-members': 'error',
         '@typescript-eslint/no-empty-interface': 'off',
@@ -139,13 +108,7 @@ exports.eslintConfig = {
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
-        '@typescript-eslint/no-use-before-define': [
-            'error',
-            {
-                functions: false,
-                typedefs: false
-            }
-        ],
+        '@typescript-eslint/no-use-before-define': 'off',
         '@typescript-eslint/no-useless-constructor': 'error',
         '@typescript-eslint/no-var-requires': 'error',
         '@typescript-eslint/prefer-as-const': 'error',
@@ -155,7 +118,7 @@ exports.eslintConfig = {
         '@typescript-eslint/prefer-string-starts-ends-with': 'error',
         '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/require-await': 'error',
-        '@typescript-eslint/restrict-plus-operands': 'error',
+        '@typescript-eslint/restrict-plus-operands': 'off',
         '@typescript-eslint/switch-exhaustiveness-check': 'warn',
         '@typescript-eslint/unbound-method': 'error',
         '@typescript-eslint/unified-signatures': 'error',
