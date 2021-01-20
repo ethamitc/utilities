@@ -1,4 +1,4 @@
-import type { APIMessage, Message, MessageReaction, NewsChannel, ReactionCollector, TextChannel, User } from 'discord.js';
+import { APIMessage, Message, MessageOptions, MessageReaction, NewsChannel, ReactionCollector, TextChannel, User } from 'discord.js';
 /**
  * This is a [[PaginatedMessage]], a utility to paginate messages (usually embeds).
  * You must either use this class directly or extend it.
@@ -123,12 +123,12 @@ export declare class PaginatedMessage {
     /**
      * This function is executed on [[PaginatedMessage.run]]. This is an extendable method.
      */
-    resolvePagesOnRun(): Promise<void>;
+    resolvePagesOnRun(channel: TextChannel | NewsChannel): Promise<void>;
     /**
      * This function is executed whenever an action is triggered and resolved.
      * @param index The index to resolve.
      */
-    resolvePage(index?: number): Promise<APIMessage | null>;
+    resolvePage(channel: TextChannel | NewsChannel, index: number): Promise<APIMessage>;
     /**
      * This clones the current handler into a new instance.
      */
@@ -193,23 +193,44 @@ export interface PaginatedMessageOptions {
  * Pages can be either an {@link https://discord.js.org/#/docs/main/stable/class/APIMessage APIMessage} directly,
  * or an awaited function which returns an {@link https://discord.js.org/#/docs/main/stable/class/APIMessage APIMessage}.
  *
+ * Furthermore, {@link https://discord.js.org/#/docs/main/stable/typedef/MessageOptions MessageOptions} can be used to
+ * construct the pages without state, this library also provides [[MessageBuilder]], which can be used as a chainable
+ * alternative to raw objects, similar to how {@link https://discord.js.org/#/docs/main/stable/class/MessageEmbed MessageEmbed}
+ * works.
+ *
+ * @example
+ * ```typescript
+ * // Direct usage as a MessageBuilder
+ * new MessageBuilder().setContent('Test content!');
+ * ```
+ *
+ * @example
+ * ```typescript
+ * // An awaited function. This function also passes index, pages, and handler.
+ * (index, pages) =>
+ *   new MessageBuilder().setEmbed(
+ *     new MessageEmbed().setFooter(`Page ${index + 1} / ${pages.length}`)
+ *   );
+ * ```
+ *
  * @example
  * ```typescript
  * // Direct usage as an APIMessage
- *
  * new APIMessage(message.channel, {
- *   context: 'Test content!',
+ *   content: 'Test content!',
  * });
+ * ```
  *
+ * @example
+ * ```typescript
  * // An awaited function. This function also passes index, pages, and handler.
- *
  * (index, pages) =>
  *   new APIMessage(message.channel, {
  *     embed: new MessageEmbed().setFooter(`Page ${index + 1} / ${pages.length}`)
  *   });
  * ```
  */
-export declare type MessagePage = ((index: number, pages: MessagePage[], handler: PaginatedMessage) => Awaited<APIMessage>) | APIMessage;
+export declare type MessagePage = ((index: number, pages: MessagePage[], handler: PaginatedMessage) => Awaited<APIMessage | MessageOptions>) | APIMessage | MessageOptions;
 declare type Awaited<T> = PromiseLike<T> | T;
 export {};
 //# sourceMappingURL=PaginatedMessage.d.ts.map
