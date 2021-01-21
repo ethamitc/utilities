@@ -33,7 +33,7 @@ import { APIMessage, Message, MessageOptions, MessageReaction, NewsChannel, Reac
  *   id: '⏹️',
  *   disableResponseEdit: true,
  *   run: ({ response, collector }) => {
- *     await response!.reactions.removeAll();
+ *     await response.reactions.removeAll();
  *     collector!.stop();
  *   }
  * }```
@@ -99,41 +99,76 @@ export declare class PaginatedMessage {
      */
     addAction(action: IPaginatedMessageAction): this;
     /**
+     * Checks whether or not the handler has a specific page.
+     * @param index The index to check.
+     */
+    hasPage(index: number): boolean;
+    /**
      * Clears all current pages and messages and sets them. The order given is the order they will be used.
      * @param pages The pages to set.
      */
     setPages(pages: MessagePage[]): this;
-    /**
-     * Add pages to the existing ones. The order given is the order they will be used.
-     * @param pages The pages to add.
-     */
-    addPages(pages: MessagePage[]): this;
     /**
      * Adds a page to the existing ones. This will be added as the last page.
      * @param page The page to add.
      */
     addPage(page: MessagePage): this;
     /**
-     * This executes the [[PaginatedMessage]] and sends the pages corresponding with [[PaginatedMessage.index]].
+     * Add pages to the existing ones. The order given is the order they will be used.
+     * @param pages The pages to add.
+     */
+    addPages(pages: MessagePage[]): this;
+    /**
+     * Executes the [[PaginatedMessage]] and sends the pages corresponding with [[PaginatedMessage.index]].
      * The handler will start collecting reactions and running actions once all actions have been reacted to the message.
      * @param author The author to validate.
      * @param channel The channel to use.
      */
     run(author: User, channel: TextChannel | NewsChannel): Promise<this>;
     /**
-     * This function is executed on [[PaginatedMessage.run]]. This is an extendable method.
+     * Executed whenever [[PaginatedMessage.run]] is called.
      */
     resolvePagesOnRun(channel: TextChannel | NewsChannel): Promise<void>;
     /**
-     * This function is executed whenever an action is triggered and resolved.
+     * Executed whenever an action is triggered and resolved.
      * @param index The index to resolve.
      */
     resolvePage(channel: TextChannel | NewsChannel, index: number): Promise<APIMessage>;
     /**
-     * This clones the current handler into a new instance.
+     * Clones the current handler into a new instance.
      */
     clone(): PaginatedMessage;
+    /**
+     * Sets up the message.
+     * @param channel The channel the handler is running at.
+     * @param author The author the handler is for.
+     */
+    protected setUpMessage(channel: TextChannel | NewsChannel, author: User): Promise<void>;
+    /**
+     * Sets up the message's reactions and the collector.
+     * @param channel The channel the handler is running at.
+     * @param author The author the handler is for.
+     */
+    protected setUpReactions(channel: TextChannel | NewsChannel, author: User): Promise<void>;
+    /**
+     * Handles the load of a page.
+     * @param page The page to be loaded.
+     * @param channel The channel the paginated message runs at.
+     * @param index The index of the current page.
+     */
+    protected handlePageLoad(page: MessagePage, channel: TextChannel | NewsChannel, index: number): Promise<APIMessage>;
+    /**
+     * Handles the `collect` event from the collector.
+     * @param author The the handler is for.
+     * @param channel The channel the handler is running at.
+     * @param reaction The reaction that was received.
+     * @param user The user that reacted to the message.
+     */
     protected handleCollect(author: User, channel: TextChannel | NewsChannel, reaction: MessageReaction, user: User): Promise<void>;
+    /**
+     * Handles the `end` event from the collector.
+     * @param reason The reason for which the collector was ended.
+     */
     protected handleEnd(reason: string): Promise<void>;
     /**
      * The default actions of this handler.
@@ -144,6 +179,9 @@ export declare class PaginatedMessage {
      * event when the message (or its owner) has been deleted.
      */
     static deletionStopReasons: string[];
+}
+export interface PaginatedMessage {
+    constructor: typeof PaginatedMessage;
 }
 /**
  * @example
@@ -164,7 +202,7 @@ export declare class PaginatedMessage {
  *   id: '⏹️',
  *   disableResponseEdit: true,
  *   run: ({ response, collector }) => {
- *     await response!.reactions.removeAll();
+ *     await response.reactions.removeAll();
  *     collector!.stop();
  *   }
  * }```
