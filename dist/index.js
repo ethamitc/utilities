@@ -57,7 +57,7 @@ exports.eslintConfig = {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': 'error',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/init-declarations': 'error',
+        '@typescript-eslint/init-declarations': 'off',
         '@typescript-eslint/member-ordering': [
             'error',
             {
